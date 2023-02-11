@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - Portafolio</title>
+<!-- css fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+  <nav class="nav-main">
+    <!-- btn -->
+    <input type="checkbox" class="nav-main__btn-collapse" id="nav-main__checkbox">
+    <label for="nav-main__checkbox" class="nav-main__btn-collapse-icon">
+      <span class="icon-nav"></span>
+      <span class="icon-nav"></span>
+      <span class="icon-nav"></span>
+    </label>
+    <!-- box red -->
+    <div class="nav-main__btn-collapse-bg"></div>
+    <!-- social networks -->
+    <div class="social-networks">
+      <!-- linkedIn -->
+      <a href="https://github.com/budhisadva" target="_blank" class="social-networks__link-item">
+        <i class="fab fa-github"></i>
+      </a>
+      <!-- Git -->
+      <a href="https://www.linkedin.com/in/sa%C3%BAl-gabriel-castillo-su%C3%A1rez-039165251/" target="_blank" class="social-networks__link-item">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <!-- menu -->
+    <div class="nav-main__menu">
+      <a href="{{ url_for('portfolio.index') }}" class="nav-main__link-item">
+        <i class="far fa-sun"></i>
+        Inicio
+      </a>
+      <a href="{{ url_for('portfolio.info') }}" class="nav-main__link-item">
+        <i class="far fa-grin-beam"></i>
+        Acerca de mi
+      </a>
+      <a href="#" class="nav-main__link-item">
+        <i class="far fa-sun"></i>
+        Proyectos
+      </a>
+      <a href="#" class="nav-main__link-item">
+        <i class="far fa-solid fa-flag"></i>
+        Team
+      </a>
+      <a href="#" class="nav-main__link-item">
+        <i class="far fa-light fa-envelope"></i>
+        Contacto
+      </a>
+    </div>
+  </nav>
+  <section>{% block content %}{% endblock %}</section>
+</body>
